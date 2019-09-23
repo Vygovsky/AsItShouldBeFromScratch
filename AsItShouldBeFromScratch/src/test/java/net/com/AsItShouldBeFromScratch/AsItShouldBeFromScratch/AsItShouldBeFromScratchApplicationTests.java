@@ -7,12 +7,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.text.DateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.HashSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,9 +22,6 @@ public class AsItShouldBeFromScratchApplicationTests {
 
     @Test
     public void testStoreUser() {
-        Date temporalValues=new java.sql.Date(2011,11,25);
-
-
 
         HashSet<Role> roles = new HashSet<>();
         roles.add(Role.USER);
@@ -37,10 +30,9 @@ public class AsItShouldBeFromScratchApplicationTests {
                 "rom",
                 "rom",
                 "roman@ukr.net",
-                "Roman",
+                "Romanте",
                 "Vygovsky",
-
-        roles));
+                roles));
         assertThat(user).isNotNull();
         assertThat(userRepositoryTest.count()).isEqualTo(1L);
     }
