@@ -68,6 +68,7 @@ public class UserRepositoryTest {
         assertThat(actualUser.getRoles()).doesNotContain(Role.ADMIN);
     }
 
+
     @Test
     public void findUserById_shouldSuccessfullyFindUserById() {
         assertTrue(true);
