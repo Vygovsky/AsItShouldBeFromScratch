@@ -13,7 +13,7 @@ public interface IUserController {
 
     void deleteUser(Long id);
 
-    void deleteAllUsers(Long id);
+    void deleteAllUsers();
 
     Optional<User> findByName(String username);
 }

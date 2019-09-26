@@ -1,8 +1,7 @@
-package net.com.AsItShouldBeFromScratch.AsItShouldBeFromScratch.repository;
+package net.com.AsItShouldBeFromScratch.repository;
 
 import net.com.AsItShouldBeFromScratch.model.Role;
 import net.com.AsItShouldBeFromScratch.model.User;
-import net.com.AsItShouldBeFromScratch.repository.UserRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -71,7 +71,19 @@ public class UserRepositoryTest {
 
     @Test
     public void findUserById_shouldSuccessfullyFindUserById() {
-        assertTrue(true);
+        HashSet<Role> roles = new HashSet<>(Arrays.asList(Role.USER));
+        repository.save(User.builder()
+                .login("rom2")
+                .password("rom2")
+                .email("rom2" +USER_EMAIL)
+                .firstName("Rom2")
+                .lastName("Rom2")
+                .roles(roles)
+                .build());
+        assertThat(repository.count()).isEqualTo(2L);
+
+        List<User> users = (List<User>) repository.findAll();
+        assertThat(users.size()).isEqualTo(2);
     }
 
     @Test
