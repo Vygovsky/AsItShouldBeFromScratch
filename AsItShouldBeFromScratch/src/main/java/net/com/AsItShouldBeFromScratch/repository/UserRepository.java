@@ -8,12 +8,12 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
+
     Optional<User> findByEmail(String email);
 
     Optional<User> findUserByFirstName(String username);
 
     Optional<User> findUserByLastName(String lastName);
 
-    void deleteUserById(Long id);
 
 }

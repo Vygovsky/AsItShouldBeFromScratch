@@ -9,9 +9,10 @@ public interface IUserController {
 
     Optional<User> getUserById(Long id);
 
-    void saveOrUpdateUser(User user);
+    User saveOrUpdateUser(User user);
 
-    void deleteUser(Long id);
+
+    void deleteById(Long id);
 
     void deleteAllUsers();
 

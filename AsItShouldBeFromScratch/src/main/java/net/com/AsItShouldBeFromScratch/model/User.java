@@ -1,6 +1,7 @@
 package net.com.AsItShouldBeFromScratch.model;
 
 import lombok.*;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

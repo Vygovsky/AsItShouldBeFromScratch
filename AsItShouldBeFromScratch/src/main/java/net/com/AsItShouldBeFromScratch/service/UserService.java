@@ -29,13 +29,15 @@ public class UserService implements IUserController {
     }
 
     @Override
-    public void saveOrUpdateUser(User user) {
-        userRepository.save(user);
+    public User saveOrUpdateUser(User user) {
+        return userRepository.save(user);
     }
 
+
+
     @Override
-    public void deleteUser(Long id) {
-        userRepository.deleteUserById(id);
+    public void deleteById(Long id) {
+        userRepository.deleteById(id);
     }
 
     @Override
