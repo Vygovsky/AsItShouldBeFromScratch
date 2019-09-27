@@ -29,6 +29,11 @@ public class UserController {
         return userService.saveOrUpdateUser(user);
     }
 
+    @PutMapping(path = "/user/update")
+    public User updateUser(@RequestBody User user) {
+        return userService.saveOrUpdateUser(user);
+    }
+
     @GetMapping(path = "/user/{id}")
     public Optional<User> getUserById(@PathVariable("id") Long id) {
         return userService.getUserById(id);

@@ -11,7 +11,6 @@ public interface IUserController {
 
     User saveOrUpdateUser(User user);
 
-
     void deleteById(Long id);
 
     void deleteAllUsers();

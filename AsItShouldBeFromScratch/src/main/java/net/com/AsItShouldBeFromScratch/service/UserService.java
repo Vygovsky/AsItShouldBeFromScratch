@@ -33,8 +33,6 @@ public class UserService implements IUserController {
         return userRepository.save(user);
     }
 
-
-
     @Override
     public void deleteById(Long id) {
         userRepository.deleteById(id);
